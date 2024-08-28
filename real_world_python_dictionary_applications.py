@@ -15,6 +15,9 @@ restaurant_menu ["Main Course"]["Steak"] = 17.99
 # - Remove "Bruschetta" from "Starters". 
 restaurant_menu["Starters"].pop("Bruschetta")
 
-# looped through the dictionary to provide a more legible print out, but curious how to get the key-value pairs in the nested dictionary to print without the brackets...?
+#looped through the dictionary within the dictionary to print the final menu
 for category, items in restaurant_menu.items():
-    print(category, items)
+    print(f"{category} includes: ")
+    for item, price in items.items():
+        print(f"- {item} for {price}")
+    
